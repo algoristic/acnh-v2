@@ -1,7 +1,7 @@
 import { Animal } from './animal';
-import { Hemisphere } from './hemisphere';
+//import { Hemisphere } from './hemisphere';
 
 export interface Data {
-  hemispheres: Hemisphere[],
+//  hemispheres: Hemisphere[],
   animals: Animal[]
 }
