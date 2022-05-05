@@ -10,6 +10,9 @@ import { FilterComponent } from './component/filter/filter.component';
 import { AnimalService } from './service/animal.service';
 import { FilterService } from './service/filter.service';
 import { AnimalDetailComponent } from './component/animal-detail/animal-detail.component';
+import { HeaderComponent } from './component/header/header.component';
+import { BrandComponent } from './component/brand/brand.component';
+import { SortComponent } from './component/sort/sort.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AnimalDetailComponent } from './component/animal-detail/animal-detail.c
     AnimalsViewComponent,
     DomainViewComponent,
     FilterComponent,
-    AnimalDetailComponent
+    AnimalDetailComponent,
+    HeaderComponent,
+    BrandComponent,
+    SortComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Filter } from '../../model/ui/filter';
 import { FilterService } from '../../service/filter.service';
@@ -10,6 +10,8 @@ import { TimeService } from '../../service/time.service';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+  @Input() public extended?: boolean;;
+
   public filter?: Filter;
   public currentMonth?: string;
   public currentHour?: string;

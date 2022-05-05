@@ -26,7 +26,8 @@ export class AnimalService {
     const animals = input.animals
       .filter(animal => animal.domain === filter.domain)
       .filter(this.filteringService.getMonthFilter(baseFilter))
-      .filter(this.filteringService.getTimeFilter(baseFilter));
+      .filter(this.filteringService.getTimeFilter(baseFilter))
+      .sort(this.filteringService.getSortedBy(baseFilter));
     return of(animals);
   }
 }

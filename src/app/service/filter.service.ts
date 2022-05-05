@@ -8,7 +8,9 @@ export class FilterService {
 
   private filter: BehaviorSubject<Filter> = new BehaviorSubject({
     monthOption: 'current',
-    timeOption: 'current'
+    timeOption: 'current',
+    sortProperty: 'value',
+    sortOrder: 'descending'
   });
 
   getFilter(): Observable<Filter> {

@@ -1,0 +1,5 @@
+<app-brand></app-brand>
+<app-filter [extended]="extendedOptions"></app-filter>
+<app-sort [extended]="extendedOptions"></app-sort>
+<button *ngIf="extendedOptions" (click)="toggleExtended()">- Einfach</button>
+<button *ngIf="!extendedOptions" (click)="toggleExtended()">+ Erweitert</button>
