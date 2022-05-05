@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Animal } from './model/animal';
-import { DataService } from './service/data.service';
+import { Filter } from './model/ui/filter';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +8,7 @@ import { DataService } from './service/data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public animals: Animal[] = [];
+  public filter: Filter = { };
 
-  constructor(private dataService: DataService) { }
-
-  ngOnInit(): void {
-    this.dataService.getAnimals()
-      .subscribe(animals => {
-        this.animals = animals
-      });
-  }
+  ngOnInit(): void { }
 }

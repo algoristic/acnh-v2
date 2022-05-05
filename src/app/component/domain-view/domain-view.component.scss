@@ -1,0 +1,11 @@
+.domain-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.animal {
+  margin-right: 1rem;
+}
+.animal:last-child {
+  margin-right: inherit;
+}
