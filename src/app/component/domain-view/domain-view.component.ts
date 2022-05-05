@@ -10,6 +10,9 @@ import { FilterService } from '../../service/filter.service';
   styleUrls: ['./domain-view.component.scss']
 })
 export class DomainViewComponent implements OnInit {
+  @Input() public header?: string;
+  @Input() public icon?: string;
+
   @Input() public domain: string = '';
   public animals: Animal[] = [];
 
@@ -21,7 +24,6 @@ export class DomainViewComponent implements OnInit {
     this.filterService.getFilter().subscribe(filter => {
       this.animalService.getAnimals(filter, this.domain).subscribe(animals => {
         this.animals = animals;
-        console.log(`${this.domain}`);
       })
     });
   }

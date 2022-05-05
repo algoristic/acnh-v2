@@ -1,3 +1,12 @@
-<section class="domain-view">
-  <span *ngFor="let animal of animals" id="{{animal.slug}}" class="animal">{{animal.name}}</span>
+<section class="domain-view domain-{{domain}}">
+  <h2 class="domain-header">
+    <span class="header-icon">{{icon}}</span>
+    <span class="header-text">{{header}}</span>
+  </h2>
+  <body class="domain-body">
+    <app-animal-detail
+      *ngFor="let animal of animals"
+      [animal]="animal">
+    </app-animal-detail>
+  </body>
 </section>

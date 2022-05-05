@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Filter } from '../../model/ui/filter';
 import { FilterService } from '../../service/filter.service';
+import { TimeService } from '../../service/time.service';
 
 @Component({
   selector: 'app-filter',
@@ -9,19 +10,24 @@ import { FilterService } from '../../service/filter.service';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+  public filter?: Filter;
+  public currentMonth?: string;
+  public currentHour?: string;
 
-  filter?: Filter;
-
-  constructor(private service: FilterService) { }
+  constructor(
+    private filterService: FilterService,
+    private timeService: TimeService
+  ) { }
 
   ngOnInit(): void {
-    this.service.getFilter().subscribe(filter => this.filter = filter);
+    this.filterService.getFilter().subscribe(filter => this.filter = filter);
+    this.currentMonth = this.timeService.getMonthName();
+    this.currentHour = this.timeService.getHourName();
   }
 
   changeFilter(): void {
-    console.log(this.filter);
     if(this.filter !== undefined) {
-      this.service.setFilter(this.filter);
+      this.filterService.setFilter(this.filter);
     }
   }
 }

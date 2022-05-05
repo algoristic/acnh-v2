@@ -9,22 +9,21 @@ import { FilterComponent } from './component/filter/filter.component';
 
 import { AnimalService } from './service/animal.service';
 import { FilterService } from './service/filter.service';
+import { AnimalDetailComponent } from './component/animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalsViewComponent,
     DomainViewComponent,
-    FilterComponent
+    FilterComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [
-    AnimalService,
-    FilterService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

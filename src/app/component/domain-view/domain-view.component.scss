@@ -1,11 +1,8 @@
-.domain-view {
+.domain {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.animal {
-  margin-right: 1rem;
-}
-.animal:last-child {
-  margin-right: inherit;
+.header-icon {
+  margin-right: .5rem;
 }
