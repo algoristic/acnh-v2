@@ -1,5 +1,6 @@
 import { Filter } from './filter';
 
-export interface DomainFilter extends Filter {
+export interface DomainFilter {
+  baseFilter: Filter
   domain: string
 }

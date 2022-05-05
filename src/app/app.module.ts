@@ -5,18 +5,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AnimalsViewComponent } from './component/animals-view/animals-view.component';
 import { DomainViewComponent } from './component/domain-view/domain-view.component';
+import { FilterComponent } from './component/filter/filter.component';
+
+import { AnimalService } from './service/animal.service';
+import { FilterService } from './service/filter.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalsViewComponent,
-    DomainViewComponent
+    DomainViewComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AnimalService,
+    FilterService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

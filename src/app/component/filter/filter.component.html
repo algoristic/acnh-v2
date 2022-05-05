@@ -1,0 +1,26 @@
+<div *ngIf="filter">
+  <article class="filter">
+    <section class="select-month">
+      <h2>Monat</h2>
+      <p>
+        <label for="current_month">Aktueller Monat</label>
+        <input type="radio" value="current" id="current_month" name="select_month"
+          [(ngModel)]="filter.monthOption" (change)="changeFilter()">
+        <label for="all_month">Alle Monate</label>
+        <input type="radio" value="all" id="all_month" name="select_month"
+          [(ngModel)]="filter.monthOption" (change)="changeFilter()">
+      </p>
+    </section>
+    <section class="select-time">
+      <h2>Zeit</h2>
+      <p>
+        <label for="current_time">Jetzt</label>
+        <input type="radio" value="current" id="current_time" name="select_time"
+          [(ngModel)]="filter.timeOption" (change)="changeFilter()">
+        <label for="all_time">Ganzer Tag</label>
+        <input type="radio" value="all" id="all_time" name="select_time"
+          [(ngModel)]="filter.timeOption" (change)="changeFilter()">
+      </p>
+    </section>
+  </article>
+</div>
