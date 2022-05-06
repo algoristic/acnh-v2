@@ -7,8 +7,6 @@ import { AnimalsViewComponent } from './component/animals-view/animals-view.comp
 import { DomainViewComponent } from './component/domain-view/domain-view.component';
 import { FilterComponent } from './component/filter/filter.component';
 
-import { AnimalService } from './service/animal.service';
-import { FilterService } from './service/filter.service';
 import { AnimalDetailComponent } from './component/animal-detail/animal-detail.component';
 import { HeaderComponent } from './component/header/header.component';
 import { BrandComponent } from './component/brand/brand.component';
