@@ -3,7 +3,9 @@
     <mat-card-title>{{animal.name}}</mat-card-title>
   </mat-card-header>
   <mat-divider></mat-divider>
-  <img src="./assets/img/{{animal.slug}}-xl.png" alt="{{animal.name}}" title="{{animal.name}} (groß)">
+  <div class="img-spacer">
+    <img src="./assets/img/{{animal.slug}}-xl.png" alt="{{animal.name}}" title="{{animal.name}} (groß)">
+  </div>
   <mat-card-content>
     <app-animal-property-column name="Wert" value="{{animal.value.toLocaleString('de')}} Sternis"></app-animal-property-column>
     <mat-divider></mat-divider>

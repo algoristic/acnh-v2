@@ -5,3 +5,8 @@
 .animal-dialog .text-center {
   text-align: center;
 }
+@media screen and (min-width: 376px) {
+  .img-spacer {
+    max-width: 300px;
+  }
+}
