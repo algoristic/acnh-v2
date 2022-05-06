@@ -1,0 +1,18 @@
+img:not(.size-match) {
+  opacity: .25;
+}
+img {
+  max-width: 100%;
+  transform: scale(.5);
+}
+.header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.size-spacer {
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
+}
+.sizes-wrapper {
+  text-align: center;
+}

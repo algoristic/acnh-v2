@@ -1,0 +1,8 @@
+<h2 class="header">Größentabelle</h2>
+<div class="sizes-wrapper">
+  <div class="size-spacer" *ngFor="let size of sizes">
+    <img src="./assets/img/sizes/{{size}}.png"
+      class="{{size === animalSize ? 'size-match' : ''}}"
+      alt="Größe {{size}}" title="Größe {{size}}">
+  </div>
+</div>

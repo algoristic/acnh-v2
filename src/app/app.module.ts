@@ -13,9 +13,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -30,6 +32,7 @@ import { SortComponent } from './component/sort/sort.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimalDetailDialogComponent } from './component/animal-detail-dialog/animal-detail-dialog.component';
 import { AnimalPropertyColumnComponent } from './component/animal-detail-dialog/animal-property-column.component';
+import { AnimalSizeComponent } from './component/animal-detail-dialog/animal-size.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { AnimalPropertyColumnComponent } from './component/animal-detail-dialog/
     BrandComponent,
     SortComponent,
     AnimalDetailDialogComponent,
-    AnimalPropertyColumnComponent
+    AnimalPropertyColumnComponent,
+    AnimalSizeComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +60,11 @@ import { AnimalPropertyColumnComponent } from './component/animal-detail-dialog/
     MatExpansionModule,
     MatGridListModule,
     MatIconModule,
+    MatListModule,
     MatRippleModule,
     MatSelectModule,
     MatSidenavModule,
+    MatProgressSpinnerModule,
     MatTableModule,
     MatToolbarModule
   ],

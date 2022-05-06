@@ -1,9 +1,16 @@
+.mat-dialog-content.detail-dialog {
+  /*min-height: 500px;*/
+  max-height: 85vh;
+}
 .animal-dialog img {
   width: 100%;
   height: auto;
 }
 .animal-dialog .text-center {
   text-align: center;
+}
+.img-spacer {
+  margin: 0 auto;
 }
 @media screen and (min-width: 376px) {
   .img-spacer {
