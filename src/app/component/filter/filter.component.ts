@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSelect } from '@angular/material/select';
 
 import { Filter } from '../../model/ui/filter';

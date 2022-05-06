@@ -1,0 +1,17 @@
+<div class="animal-dialog">
+  <mat-card-header>
+    <mat-card-title>{{animal.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <img src="./assets/img/{{animal.slug}}-xl.png" alt="{{animal.name}}" title="{{animal.name}} (groß)">
+  <mat-card-content>
+    <app-animal-property-column name="Wert" value="{{animal.value.toLocaleString('de')}} Sternis"></app-animal-property-column>
+    <mat-divider></mat-divider>
+    <app-animal-property-column name="Zeit" value="{{animal.activeLiteral}}"></app-animal-property-column>
+    <mat-divider></mat-divider>
+    <app-animal-property-column name="Aktiv" value="{{animal.northernLiteral}}"></app-animal-property-column>
+    <mat-divider></mat-divider>
+    <app-animal-property-column name="Ort" value="{{animal.location}}"></app-animal-property-column>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+</div>

@@ -1,27 +1,15 @@
-<article *ngIf="filter && !extended" class="sort sort-simple">
-  <section class="sort-property">
-    <h2>Sortierung</h2>
-    <p>
-      <label for="property_value">Sternis</label>
-      <input type="radio" value="value" id="property_value" name="sort_property"
-        [(ngModel)]="filter.sortProperty" (change)="changeFilter()">
-      <label for="property_name">Alphabetisch</label>
-      <input type="radio" value="name" id="property_name" name="sort_property"
-        [(ngModel)]="filter.sortProperty" (change)="changeFilter()">
-    </p>
-  </section>
-  <section class="sort-order">
-    <h2>Reihenfolge</h2>
-    <p>
-      <label for="order_descending">Absteigend</label>
-      <input type="radio" value="descending" id="order_descending" name="sort_order"
-        [(ngModel)]="filter.sortOrder" (change)="changeFilter()">
-      <label for="order_ascending">Aufsteigend</label>
-      <input type="radio" value="ascending" id="order_ascending" name="sort_order"
-        [(ngModel)]="filter.sortOrder" (change)="changeFilter()">
-    </p>
-  </section>
-</article>
-<article *ngIf="filter && extended" class="sort sort-extended">
-  Erweitert
-</article>
+<div class="sort">
+  <h2 class="title">Sortierung</h2>
+  <mat-form-field *ngIf="filter" appearance="fill">
+    <mat-label>Sortieren nach</mat-label>
+    <mat-select [(value)]="filter.sortProperty" (selectionChange)="changeFilter()">
+      <mat-option *ngFor="let option of propertyOptions" [value]="option.value">{{option.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="filter" appearance="fill">
+    <mat-label>Zeit</mat-label>
+    <mat-select [(value)]="filter.sortOrder" (selectionChange)="changeFilter()">
+      <mat-option *ngFor="let option of orderOptions" [value]="option.value">{{option.viewValue}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

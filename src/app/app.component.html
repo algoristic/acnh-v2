@@ -8,13 +8,14 @@
       </button>
     </mat-toolbar>
     <app-filter></app-filter>
+    <app-sort></app-sort>
   </mat-drawer>
   <mat-drawer-content>
     <mat-toolbar color="primary">
       <mat-toolbar-row>
-        <h1>Tier-Kalender</h1>
+        <h1>ACNH-Kalender</h1>
         <span class="spacer"></span>
-        <button mat-icon-button aria-label="Einstellungen">
+        <button mat-icon-button disabled aria-label="Einstellungen">
           <mat-icon>settings</mat-icon>
         </button>
         <button mat-icon-button aria-label="Hauptmenu" (click)="sidenav.toggle()">

@@ -1,3 +1,3 @@
-<article *ngIf="animal" class="animal" matRipple>
-  <div><img src="./assets/img/{{animal.slug}}.png" alt="{{animal.name}}" title="{{animal.name}}"></div>
+<article *ngIf="animal" class="animal" matRipple (click)="openDialog()">
+  <img src="./assets/img/{{animal.slug}}.png" alt="{{animal.name}}" title="{{animal.name}}">
 </article>

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
+import { AnimalDetailDialogComponent } from '../animal-detail-dialog/animal-detail-dialog.component';
 import { Animal } from '../../model/core/animal';
 
 @Component({
@@ -9,4 +11,15 @@ import { Animal } from '../../model/core/animal';
 })
 export class AnimalDetailComponent {
   @Input() public animal?: Animal;
+
+  constructor(public dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AnimalDetailDialogComponent, {
+      data: this.animal
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed')
+    });
+  }
 }

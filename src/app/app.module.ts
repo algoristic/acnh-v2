@@ -7,13 +7,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 //app components
@@ -25,6 +28,8 @@ import { AnimalDetailComponent } from './component/animal-detail/animal-detail.c
 import { BrandComponent } from './component/brand/brand.component';
 import { SortComponent } from './component/sort/sort.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimalDetailDialogComponent } from './component/animal-detail-dialog/animal-detail-dialog.component';
+import { AnimalPropertyColumnComponent } from './component/animal-detail-dialog/animal-property-column.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FilterComponent,
     AnimalDetailComponent,
     BrandComponent,
-    SortComponent
+    SortComponent,
+    AnimalDetailDialogComponent,
+    AnimalPropertyColumnComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +50,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
@@ -50,6 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatRippleModule,
     MatSelectModule,
     MatSidenavModule,
+    MatTableModule,
     MatToolbarModule
   ],
   providers: [],

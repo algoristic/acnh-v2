@@ -1,7 +1,7 @@
 <mat-card class="domain">
   <mat-card-title class="domain-title">
-    <span class="header-icon">{{icon}}</span>
-    <span class="header-text" matBadge="{{animals.length}}" matBadgeColor="accent" matBadgeOverlap="false">{{header}}</span>
+    <span *ngIf="icon" class="header-icon">{{icon}}</span>
+    <span class="header-text">{{header}}</span>
   </mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content class="domain-animals">
