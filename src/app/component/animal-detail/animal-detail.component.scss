@@ -1,8 +1,21 @@
 .animal {
+  padding: .5rem;
+}
+/*
+.animal {
   margin-right: 1rem;
   text-align: center;
 }
+*/
+// fixed size image
+/*
 .animal img {
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
+}
+*/
+// responsice image
+.animal img {
+  width: 100%;
+  height: auto;
 }

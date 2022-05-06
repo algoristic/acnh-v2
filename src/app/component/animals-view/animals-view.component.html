@@ -1,5 +1,11 @@
-<article class="animals-view">
-  <app-domain-view domain="insects" header="Insekten" icon="🐛"></app-domain-view>
-  <app-domain-view domain="fish" header="Fische"icon="🐟"></app-domain-view>
-  <app-domain-view domain="sea-creatures" header="Meerestiere" icon="🐙"></app-domain-view>
+<article class="animals-view" (window:resize)="handleResize()">
+  <app-domain-view header="Insekten" icon="🐛"
+    domain="insects" [columns]="columns">
+  </app-domain-view>
+  <app-domain-view header="Fische"icon="🐟"
+    domain="fish" [columns]="columns">
+  </app-domain-view>
+  <app-domain-view header="Meerestiere" icon="🐙"
+    domain="sea-creatures" [columns]="columns">
+  </app-domain-view>
 </article>

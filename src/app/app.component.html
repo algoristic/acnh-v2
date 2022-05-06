@@ -1,2 +1,28 @@
-<app-header></app-header>
-<app-animals-view></app-animals-view>
+<mat-drawer-container hasBackdrop="true">
+  <mat-drawer #sidenav mode="push" position="end" color="primary" class="sidenav">
+    <mat-toolbar color="accent">
+      <span>Einstellungen</span>
+      <span class="spacer"></span>
+      <button mat-icon-button aria-label="Hauptmenu schließen" (click)="sidenav.toggle()">
+        <mat-icon>done</mat-icon>
+      </button>
+    </mat-toolbar>
+    <app-filter></app-filter>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <h1>Tier-Kalender</h1>
+        <span class="spacer"></span>
+        <button mat-icon-button aria-label="Einstellungen">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Hauptmenu" (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <span class="spacer"></span>
+    <app-animals-view></app-animals-view>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,12 +1,14 @@
-<section class="domain-view domain-{{domain}}">
-  <h2 class="domain-header">
+<mat-card class="domain">
+  <mat-card-title class="domain-title">
     <span class="header-icon">{{icon}}</span>
     <span class="header-text">{{header}}</span>
-  </h2>
-  <body class="domain-body">
-    <app-animal-detail
-      *ngFor="let animal of animals"
-      [animal]="animal">
-    </app-animal-detail>
-  </body>
-</section>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content class="domain-animals">
+    <mat-grid-list cols="{{columns}}">
+      <mat-grid-tile *ngFor="let animal of animals">
+        <app-animal-detail [animal]="animal"></app-animal-detail>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

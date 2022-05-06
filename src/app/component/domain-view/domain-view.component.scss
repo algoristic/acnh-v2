@@ -1,8 +1,15 @@
-.domain-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+mat-card-title {
+  margin-bottom: 1rem;
+}
+.domain {
+  margin: 1rem 1rem;
 }
 .header-icon {
   margin-right: .5rem;
+}
+@media screen and (max-width: 720px) {
+  .domain {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

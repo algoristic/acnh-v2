@@ -12,8 +12,9 @@ import { FilterService } from '../../service/filter.service';
 export class DomainViewComponent implements OnInit {
   @Input() public header?: string;
   @Input() public icon?: string;
-
+  @Input() public columns?: number;
   @Input() public domain: string = '';
+
   public animals: Animal[] = [];
 
   constructor(
