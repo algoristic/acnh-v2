@@ -12,6 +12,7 @@
     <app-animal-property-column name="Aktiv" value="{{animal.northernLiteral}}"></app-animal-property-column>
     <mat-divider></mat-divider>
     <app-animal-property-column name="Ort" value="{{animal.location}}"></app-animal-property-column>
-    <mat-divider></mat-divider>
+    <mat-divider *ngIf="animal.size"></mat-divider>
+    <app-animal-property-column *ngIf="animal.size" name="Größe" value="{{animal.size}}"></app-animal-property-column>
   </mat-card-content>
 </div>

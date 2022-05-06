@@ -10,5 +10,6 @@ export interface Animal {
   location: string,
   northernLiteral: string,
   southernLiteral: string,
-  activeLiteral: string
+  activeLiteral: string,
+  size?: string
 }
