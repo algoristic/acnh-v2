@@ -13,6 +13,7 @@ import { AnimalDetailComponent } from './component/animal-detail/animal-detail.c
 import { HeaderComponent } from './component/header/header.component';
 import { BrandComponent } from './component/brand/brand.component';
 import { SortComponent } from './component/sort/sort.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SortComponent } from './component/sort/sort.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
