@@ -20,6 +20,10 @@ export class AnimalService {
     const animals = input.animals
       .filter(animal => animal.domain === domain)
       .filter(animal => {
+        const priceRangeFilter = this.filteringService.getPriceRangeFilter(filter);
+        return priceRangeFilter(animal);
+      })
+      .filter(animal => {
         const monthFilter = this.filteringService.getMonthFilter(filter);
         return monthFilter(animal, filter);
       })
@@ -29,5 +33,10 @@ export class AnimalService {
       })
       .sort(this.filteringService.getSortedBy(filter));
     return of(animals);
+  }
+
+  public getMaxValue(): number {
+      const input = ((data as unknown) as Data);
+      return Math.max(...input.animals.map(animal => animal.value));
   }
 }

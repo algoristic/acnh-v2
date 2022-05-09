@@ -15,7 +15,6 @@ export class AnimalDetailDialogComponent {
   ) { }
 
   onNoClick(): void {
-    console.log('onNoClick');
     this.dialogRef.close();
   }
-}  
+}

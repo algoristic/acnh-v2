@@ -3,7 +3,10 @@ export interface Filter {
   timeOption: string,
   sortProperty: string,
   sortOrder: string,
-  months?: number[]
+  months?: number[],
+  priceRange: boolean,
+  priceMin: number,
+  priceMax: number
 }
 
 const FILTER_DEFAULTS = {
@@ -11,7 +14,10 @@ const FILTER_DEFAULTS = {
   timeOption: 'current',
   sortProperty: 'value',
   sortOrder: 'descending',
-  months: undefined
+  months: undefined,
+  priceRange: false,
+  priceMin: 0,
+  priceMax: 0
 };
 
 export { FILTER_DEFAULTS };

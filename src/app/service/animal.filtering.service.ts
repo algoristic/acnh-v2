@@ -60,6 +60,16 @@ export class AnimalFilteringService {
     }
   }
 
+  getPriceRangeFilter(filter: Filter): (animal: Animal) => boolean {
+    return (animal: Animal) => {
+      if(!filter.priceRange) {
+        return true;
+      } else {
+        return ((animal.value >= filter.priceMin) && (animal.value <= filter.priceMax));
+      }
+    }
+  }
+
   getMonthFilter(filter: Filter): (animal: Animal, filter: Filter) => boolean {
     return (this.monthFilter as any)[filter.monthOption];
   }

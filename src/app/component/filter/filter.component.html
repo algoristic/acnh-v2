@@ -13,7 +13,6 @@
     </mat-select>
   </mat-form-field>
   <button mat-button color="warn" *ngIf="!extended" (click)="extend()">+ Erweitert</button>
-  <button mat-button color="warn" *ngIf="extended" (click)="reduce()">- Einfach</button>
   <div class="extended-months" *ngIf="extended">
     <mat-label>
       <h3 class="title">Monate</h3>
@@ -24,5 +23,29 @@
           (change)="monthSelect($event, month.value)">{{month.viewValue}}</mat-checkbox>
       </mat-grid-tile>
     </mat-grid-list>
+    <div class="price-range-wrapper">
+      <mat-label>
+        <h3 class="title">Preisspanne</h3>
+      </mat-label>
+      <mat-form-field appearance="fill" >
+        <mat-label>Min.</mat-label>
+        <input type="number" matInput
+          step="100"
+          (change)="changeFilter()"
+          [min]="0"
+          [max]="filter.priceMax"
+          [(ngModel)]="filter.priceMin">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Max.</mat-label>
+        <input type="number" matInput
+          step="100"
+          (change)="changeFilter()"
+          [min]="filter.priceMin"
+          [max]="priceMax"
+          [(ngModel)]="filter.priceMax">
+      </mat-form-field>
+    </div>
   </div>
+  <button mat-button color="warn" *ngIf="extended" (click)="reduce()">- Einfach</button>
 </div>

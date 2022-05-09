@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Filter, FILTER_DEFAULTS } from '../../model/ui/filter';
+import { AnimalService } from '../../service/animal.service';
 import { FilterService } from '../../service/filter.service';
 import { TimeService } from '../../service/time.service';
 
@@ -27,12 +28,14 @@ export class FilterComponent implements OnInit {
   ];
   public monthOptions;
   public timeOptions;
+  public priceMax: number;
 
   public filter?: Filter;
 
   constructor(
     private filterService: FilterService,
-    private timeService: TimeService) {
+    private timeService: TimeService,
+    private animalService: AnimalService) {
       this.monthOptions = [
         { value: 'current', viewValue: this.timeService.getMonthName() },
         { value: 'all', viewValue: 'Ganzes Jahr' }
@@ -41,6 +44,7 @@ export class FilterComponent implements OnInit {
         { value: 'current', viewValue: this.timeService.getHourName() },
         { value: 'all', viewValue: 'Ganzer Tag' }
       ];
+      this.priceMax = this.animalService.getMaxValue();
     }
 
   ngOnInit(): void {
@@ -58,6 +62,7 @@ export class FilterComponent implements OnInit {
     });
   }
 
+  // set default values for extended options
   extend(): void {
     this.extended = true;
     const filterMonths: number[] = [];
@@ -80,13 +85,20 @@ export class FilterComponent implements OnInit {
     }
     this.filter!.months = filterMonths;
     this.filter!.monthOption = 'custom';
+    this.filter!.priceRange = true;
+    this.filter!.priceMin = 0;
+    this.filter!.priceMax = this.priceMax;
     this.changeFilter();
   }
 
+  // reset values for extended options an set default values for normal options
   reduce(): void {
     this.extended = false;
     this.filter!.monthOption = FILTER_DEFAULTS.monthOption;
     this.filter!.months = undefined;
+    this.filter!.priceRange = false;
+    this.filter!.priceMin = FILTER_DEFAULTS.priceMin;
+    this.filter!.priceMax = FILTER_DEFAULTS.priceMax;
     this.changeFilter();
   }
 
