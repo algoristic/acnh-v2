@@ -1,11 +1,11 @@
 <article class="animals-view" (window:resize)="handleResize()">
-  <app-domain-view header="Insekten"
+  <app-domain-view header="Insekten" [height]="height"
     domain="insects" [columns]="columns">
   </app-domain-view>
-  <app-domain-view header="Fische"
+  <app-domain-view header="Fische" [height]="height"
     domain="fish" [columns]="columns">
   </app-domain-view>
-  <app-domain-view header="Meerestiere" 
+  <app-domain-view header="Meerestiere" [height]="height"
     domain="sea-creatures" [columns]="columns">
   </app-domain-view>
 </article>

@@ -62,7 +62,8 @@ export class AnimalFilteringService {
 
   getPriceRangeFilter(filter: Filter): (animal: Animal) => boolean {
     return (animal: Animal) => {
-      if(!filter.priceRange) {
+      let { priceRange } = filter;
+      if(priceRange === false || (priceRange as any) === "false") {
         return true;
       } else {
         return ((animal.value >= filter.priceMin) && (animal.value <= filter.priceMax));

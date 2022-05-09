@@ -5,7 +5,7 @@
   </mat-card-title>
   <mat-divider></mat-divider>
   <mat-card-content class="domain-animals">
-    <mat-grid-list cols="{{columns}}">
+    <mat-grid-list cols="{{columns}}" rowHeight="{{height}}">
       <mat-grid-tile *ngFor="let animal of animals">
         <app-animal-detail [animal]="animal"></app-animal-detail>
       </mat-grid-tile>

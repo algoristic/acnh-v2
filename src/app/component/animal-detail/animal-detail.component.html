@@ -1,3 +1,8 @@
 <article *ngIf="animal" class="animal" matRipple (click)="openDialog()">
   <img src="./assets/img/{{animal.slug}}.png" alt="{{animal.name}}" title="{{animal.name}}">
+  <div class="animal-properties">
+    <div class="animal-prop">{{animal.name}}</div>
+    <div class="animal-prop">{{animal.value.toLocaleString('de')}} Sternis</div>
+    <div class="animal-prop">{{animal.activeLiteral}}</div>
+  </div>
 </article>

@@ -2,22 +2,31 @@
   padding: .5rem;
   border-radius: .5rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-/*
-.animal {
-  margin-right: 1rem;
-  text-align: center;
-}
-*/
-// fixed size image
-/*
 .animal img {
-  width: 50px;
-  height: 50px;
+  /* responsive */
+  /* width: 100%; */
+  /* height: auto; */
+  width: 60px;
+  height: 60px;
+  padding-right: 1rem;
 }
-*/
-// responsice image
-.animal img {
-  width: 100%;
-  height: auto;
+.animal-properties .animal-prop {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.animal-properties .animal-prop:last-child {
+  border-bottom: none;
+}
+@media screen and (max-width: 576px) {
+  .animal {
+    flex-direction: column;
+    text-align: center;
+  }
+  .animal img {
+    padding-right: unset;
+    margin: 0 auto;
+  }
 }
