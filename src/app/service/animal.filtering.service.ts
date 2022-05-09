@@ -4,8 +4,8 @@ import { Animal } from '../model/core/animal';
 import { Filter } from '../model/ui/filter';
 import { TimeService } from './time.service';
 
-type AnimalFilterFunction = (animal: Animal) => boolean;
-type AnimaFilter = {
+type AnimalFilterFunction = (animal: Animal, filter: Filter) => boolean;
+type AnimalFilter = {
   current: AnimalFilterFunction,
   all: AnimalFilterFunction
 }
@@ -22,20 +22,20 @@ type AnimalSort = {
 
 @Injectable({ providedIn: 'root' })
 export class AnimalFilteringService {
-  private monthFilter: AnimaFilter;
-  private timeFilter: AnimaFilter;
+  private monthFilter: AnimalFilter;
+  private timeFilter: AnimalFilter;
   private sort: AnimalSort;
 
   constructor(private timeService: TimeService) {
     this.monthFilter = {
-      current: (animal: Animal) => {
+      current: (animal: Animal, filter: Filter) => {
         const currentMonth = this.timeService.getMonth();
         return animal.northern.includes(currentMonth)
       },
       all: () => true
     }
     this.timeFilter = {
-      current: (animal: Animal) => {
+      current: (animal: Animal, filter: Filter) => {
         const currentHour = this.timeService.getHour();
         return animal.active[currentHour] ? true : false
       },
@@ -53,11 +53,11 @@ export class AnimalFilteringService {
     }
   }
 
-  getMonthFilter(filter: Filter): (animal: Animal) => boolean {
+  getMonthFilter(filter: Filter): (animal: Animal, filter: Filter) => boolean {
     return (this.monthFilter as any)[filter.monthOption];
   }
 
-  getTimeFilter(filter: Filter): (animal: Animal) => boolean {
+  getTimeFilter(filter: Filter): (animal: Animal, filter: Filter) => boolean {
     return (this.timeFilter as any)[filter.timeOption];
   }
 
