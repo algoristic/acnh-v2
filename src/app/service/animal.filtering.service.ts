@@ -7,7 +7,8 @@ import { TimeService } from './time.service';
 type AnimalFilterFunction = (animal: Animal, filter: Filter) => boolean;
 type AnimalFilter = {
   current: AnimalFilterFunction,
-  all: AnimalFilterFunction
+  all: AnimalFilterFunction,
+  custom: AnimalFilterFunction
 }
 
 type AnimalSortFunction = (a_1: Animal, a_2: Animal) => number;
@@ -28,18 +29,24 @@ export class AnimalFilteringService {
 
   constructor(private timeService: TimeService) {
     this.monthFilter = {
-      current: (animal: Animal, filter: Filter) => {
+      current: (animal: Animal) => {
         const currentMonth = this.timeService.getMonth();
         return animal.northern.includes(currentMonth)
       },
-      all: () => true
+      all: () => true,
+      custom: (animal: Animal, filter: Filter) => {
+        return animal.northern.some(month => {
+          return filter.months!.includes(month);
+        });
+      }
     }
     this.timeFilter = {
-      current: (animal: Animal, filter: Filter) => {
+      current: (animal: Animal) => {
         const currentHour = this.timeService.getHour();
         return animal.active[currentHour] ? true : false
       },
-      all: () => true
+      all: () => true,
+      custom: () => true
     }
     this.sort = {
       value: {

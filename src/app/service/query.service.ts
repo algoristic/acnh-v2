@@ -10,28 +10,28 @@ export class QueryService {
     const filter: any = {};
     Object.keys(FILTER_DEFAULTS).forEach((key: string) => {
       const defaultValue: any = (FILTER_DEFAULTS as any)[key];
-      const option = this.get(key, defaultValue);
+      let option: string = this.get(key, defaultValue);
+      const objectIdentifiers = ['{', '['];
+      const firstLetter = option ? option.charAt(0) : '';
+      if(objectIdentifiers.includes(firstLetter)) {
+        option = JSON.parse(option);
+      }
       filter[key] = option;
     })
     return (<Filter>filter);
-    // const monthOption = this.get('monthOption', 'current');
-    // const timeOption = this.get('timeOption', 'current');
-    // const sortProperty = this.get('sortProperty', 'value');
-    // const sortOrder = this.get('sortOrder', 'descending');
-    // return {
-    //   monthOption: monthOption,
-    //   timeOption: timeOption,
-    //   sortProperty: sortProperty,
-    //   sortOrder: sortOrder
-    // };
   }
 
   public setFilter(filter: Filter): void {
     Object.keys(filter).forEach((key: string) => {
-      const value: any = (filter as any)[key];
+      let value: any = (filter as any)[key];
       const defaultValue: any = (FILTER_DEFAULTS as any)[key];
       if(value !== defaultValue) {
+        if(!(typeof value === 'string')) {
+          value = JSON.stringify(value);
+        }
         this.set(key, value);
+      } else {
+        this.delete(key);
       }
     });
   }
@@ -41,6 +41,9 @@ export class QueryService {
     if(params.has(key)) {
       return params.get(key)!;
     } else {
+      if(!(typeof defaultValue === 'string')) {
+        defaultValue = JSON.stringify(defaultValue);
+      }
       return defaultValue;
     }
   }
@@ -64,7 +67,8 @@ export class QueryService {
   }
 
   private setQueryParams(params: URLSearchParams): void {
-    const url = params.toString();
+    let url = params.toString();
+    url = (url.length > 1) ? url : '';
     history.replaceState({}, '', `?${url}`);
   }
 }

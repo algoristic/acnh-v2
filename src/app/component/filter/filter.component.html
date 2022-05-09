@@ -1,15 +1,28 @@
-<div class="filter">
+<div class="filter" *ngIf="filter">
   <h2 class="title">Filter</h2>
-  <mat-form-field *ngIf="filter" appearance="fill">
+  <mat-form-field *ngIf="!extended" appearance="fill">
     <mat-label>Monat</mat-label>
     <mat-select [(value)]="filter.monthOption" (selectionChange)="changeFilter()">
       <mat-option *ngFor="let option of monthOptions" [value]="option.value">{{option.viewValue}}</mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field *ngIf="filter" appearance="fill">
+  <mat-form-field *ngIf="!extended" appearance="fill" >
     <mat-label>Zeit</mat-label>
     <mat-select [(value)]="filter.timeOption" (selectionChange)="changeFilter()">
       <mat-option *ngFor="let option of timeOptions" [value]="option.value">{{option.viewValue}}</mat-option>
     </mat-select>
   </mat-form-field>
+  <button mat-button color="warn" *ngIf="!extended" (click)="extend()">+ Erweitert</button>
+  <button mat-button color="warn" *ngIf="extended" (click)="reduce()">- Einfach</button>
+  <div class="extended-months" *ngIf="extended">
+    <mat-label>
+      <h3 class="title">Monate</h3>
+    </mat-label>
+    <mat-grid-list cols="4">
+      <mat-grid-tile *ngFor="let month of months">
+        <mat-checkbox [checked]="month.selected ? true : false"
+          (change)="monthSelect($event, month.value)">{{month.viewValue}}</mat-checkbox>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
