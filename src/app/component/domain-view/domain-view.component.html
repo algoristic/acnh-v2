@@ -1,14 +1,16 @@
-<mat-card class="domain">
-  <mat-card-title class="domain-title">
-    <span *ngIf="icon" class="header-icon">{{icon}}</span>
-    <span class="header-text">{{header}}</span>
-  </mat-card-title>
-  <mat-divider></mat-divider>
-  <mat-card-content class="domain-animals">
-    <mat-grid-list cols="{{columns}}" rowHeight="{{height}}">
-      <mat-grid-tile *ngFor="let animal of animals">
-        <app-animal-detail [animal]="animal"></app-animal-detail>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-card-content>
-</mat-card>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <span *ngIf="icon" class="header-icon">{{icon}}</span>
+      <span class="header-text">{{header}}</span>
+    </mat-panel-title>
+    <mat-panel-description class="domain-amount">
+      {{animals.length}} Tiere
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-grid-list cols="{{columns}}" rowHeight="{{height}}">
+    <mat-grid-tile *ngFor="let animal of animals">
+      <app-animal-detail [animal]="animal"></app-animal-detail>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-expansion-panel>

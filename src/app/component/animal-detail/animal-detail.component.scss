@@ -12,21 +12,11 @@
   /* height: auto; */
   width: 60px;
   height: 60px;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 .animal-properties .animal-prop {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 .animal-properties .animal-prop:last-child {
   border-bottom: none;
-}
-@media screen and (max-width: 576px) {
-  .animal {
-    flex-direction: column;
-    text-align: center;
-  }
-  .animal img {
-    padding-right: unset;
-    margin: 0 auto;
-  }
 }
