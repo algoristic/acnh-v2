@@ -1,15 +1,12 @@
 .animal {
-  padding: .5rem;
   border-radius: .5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .animal img {
-  /* responsive */
-  /* width: 100%; */
-  /* height: auto; */
   width: 60px;
   height: 60px;
   margin-right: 1rem;

@@ -9,7 +9,7 @@ export class AnimalsViewComponent {
   public columns: number;
   public height: number;
   private breakpoints: [size:number, cols:number][] = [
-    [372, 2],
+    [300, 2],
     [576, 3],
     [768, 4],
     [992, 5],

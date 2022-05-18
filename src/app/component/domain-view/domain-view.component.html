@@ -8,9 +8,15 @@
       {{animals.length}} Tiere
     </mat-panel-description>
   </mat-expansion-panel-header>
-  <mat-grid-list cols="{{columns}}" rowHeight="{{height}}">
-    <mat-grid-tile *ngFor="let animal of animals">
-      <app-animal-detail [animal]="animal"></app-animal-detail>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="domain-animals">
+    <app-animal-detail *ngFor="let animal of animals" [animal]="animal"></app-animal-detail>
+  </div>
 </mat-expansion-panel>
+
+<!--
+<mat-grid-list cols="{{columns}}" rowHeight="{{height}}">
+  <mat-grid-tile *ngFor="let animal of animals">
+    <app-animal-detail [animal]="animal"></app-animal-detail>
+  </mat-grid-tile>
+</mat-grid-list>
+-->
